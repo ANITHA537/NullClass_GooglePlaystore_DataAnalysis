@@ -73,7 +73,7 @@ plt.figure(figsize=(10, 5))
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
 plt.title("Word Cloud for >=4.5 Star Reviews in HEALTH_AND_FITNESS Category", fontsize=16)
-plt.savefig("build/wordcloud.png", dpi=300, bbox_inches='tight')
+wordcloud.to_file("build/wordcloud.png")
 plt.show()
 plt.close()
 
@@ -117,10 +117,10 @@ def is_within_time_range1():
 
 
 plot_containers=""
-wordcloud_filename=os.path.join(html_files_path, "wordcloud.png")
+#wordcloud_filename=os.path.join(html_files_path, "wordcloud.png")
 plot_containers+=f"""
 <div class="plot-container">
-    <img src="{wordcloud_filename}" alt="Word Cloud of Categories" style="width:100%; height:auto;">
+    <img src="https://nullclasswebpage/build/wordcloud.png" alt="Word Cloud of Categories" style="width:100%; height:auto;">
     <div class="insights">
         This word cloud represents the frequent words in the reviews of the apps rated  >=4.5 in HEALTH_AND_FITNESS Category .
     </div>
