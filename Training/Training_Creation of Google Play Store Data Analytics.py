@@ -11,7 +11,7 @@ import numpy as np
 # In[2]:
 
 
-data_googleplaystore=pd.read_csv("E:/NullClass LiveProject/googleplaystore.csv/googleplaystore.csv")
+data_googleplaystore=pd.read_csv("googleplaystore.csv/googleplaystore.csv")
 
 
 # In[3]:
@@ -23,7 +23,7 @@ data_googleplaystore.head()
 # In[4]:
 
 
-data_userreviews=pd.read_csv("E:/NullClass LiveProject/googleplaystore_user_reviews.csv/googleplaystore_user_reviews.csv")
+data_userreviews=pd.read_csv("googleplaystore_user_reviews.csv/googleplaystore_user_reviews.csv")
 
 
 # In[5]:
@@ -259,7 +259,7 @@ fig.show()
 # In[38]:
 
 
-fig.write_html('E:/NullClass LiveProject/Training/Samplebarchart.html')
+fig.write_html('Training/Samplebarchart.html')
 
 
 # In[39]:
@@ -267,7 +267,7 @@ fig.write_html('E:/NullClass LiveProject/Training/Samplebarchart.html')
 
 import os as os
 import plotly.io as pio
-html_files_path="E:/NullClass LiveProject/Training"
+html_files_path="Training"
 if not os.path.exists(html_files_path):
     os.makedirs(html_files_path)
 plot_containers=""
