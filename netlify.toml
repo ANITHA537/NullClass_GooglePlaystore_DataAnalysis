@@ -1,5 +1,5 @@
 [build]
-  publish = "publish"  # Replace with the directory containing your index.html
+  publish = "build"  # Replace with the directory containing your index.html
   command = "pip install -r requirements.txt && python Tasks_Google_Play_store_Analysis_NullClass.py"
 [context.production.environment]
   PYTHON_VERSION = "3.9"
