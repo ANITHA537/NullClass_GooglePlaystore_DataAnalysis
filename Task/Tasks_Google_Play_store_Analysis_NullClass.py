@@ -29,7 +29,7 @@ data_googleplaystore['Reviews']=pd.to_numeric(data_googleplaystore['Reviews'],er
 #data_googleplaystore[data_googleplaystore['Category']=='GAMES']
 data_googleplaystore['Category'].value_counts()
 
-!pip install wordcloud
+
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from nltk.corpus import stopwords
