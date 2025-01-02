@@ -38,8 +38,6 @@ PyQtWebEngine==5.15.6
 python-lsp-jsonrpc==1.0.0
 scipy==1.11.4
 wordcloud==1.9.3
-xlrd==2.0.1
-webencodings==0.5.1
 vaderSentiment==3.3.2
 update-checker==0.18.0
 
