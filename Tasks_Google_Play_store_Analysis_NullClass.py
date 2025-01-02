@@ -73,7 +73,7 @@ plt.figure(figsize=(10, 5))
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
 plt.title("Word Cloud for >=4.5 Star Reviews in HEALTH_AND_FITNESS Category", fontsize=16)
-plt.savefig("E:/NullClass LiveProject/Task/wordcloud.png", dpi=300, bbox_inches='tight')
+plt.savefig("build/wordcloud.png", dpi=300, bbox_inches='tight')
 plt.show()
 plt.close()
 
