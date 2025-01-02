@@ -117,10 +117,10 @@ def is_within_time_range1():
 
 
 plot_containers=""
-wordcloud_filename=os.path.join("E:/NullClass LiveProject/Task", "wordcloud.png")
+wordcloud_filename=os.path.join(html_files_path, "wordcloud.png")
 plot_containers+=f"""
 <div class="plot-container">
-    <img src="https://your-netlify-site.netlify.app/assets/wordcloud.png" alt="Word Cloud of Categories" style="width:100%; height:auto;">
+    <img src="{wordcloud_filename}" alt="Word Cloud of Categories" style="width:100%; height:auto;">
     <div class="insights">
         This word cloud represents the frequent words in the reviews of the apps rated  >=4.5 in HEALTH_AND_FITNESS Category .
     </div>
