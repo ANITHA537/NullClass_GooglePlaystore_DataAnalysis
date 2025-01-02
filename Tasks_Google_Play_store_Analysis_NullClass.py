@@ -211,7 +211,7 @@ def is_within_time_range2():
 
 def save_plot_as_html2(fig, filename, insight):
     html_content=pio.to_html(fig, full_html=False, include_plotlyjs='inline')
-    if is_within_time_range2():
+    if is_within_time_range2(False):
         global plot_containers
         plot_containers += f"""
         <div class="plot-container">
