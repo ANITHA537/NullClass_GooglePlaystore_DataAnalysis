@@ -1,2 +1,4 @@
+[build]
+  publish = "publish"
 [context.production.environment]
   PYTHON_VERSION = "3.9"
