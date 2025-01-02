@@ -7,7 +7,6 @@ asyncprawcore==2.4.0
 atomicwrites==1.4.0
 ccxt==4.4.32
 chart-studio==1.1.0
-clyent==1.2.1
 conda-repo-cli==1.0.75
 conda-verify==3.4.2
 et-xmlfile==1.1.0
