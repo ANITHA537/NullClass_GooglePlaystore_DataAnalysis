@@ -230,7 +230,7 @@ def save_plot_as_html2(fig, filename, insight):
            # <div class="message">
                 #This chart is only available between 5 PM IST to 7 PM IST.
            # </div>
-        3</div>
+        #</div>
        # """
     fig.write_html(filename, full_html=False, include_plotlyjs='inline')
 
