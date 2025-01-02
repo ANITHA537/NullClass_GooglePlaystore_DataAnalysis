@@ -13,8 +13,8 @@ import plotly.express as px
 import plotly.io as pio
 import webbrowser
 
-data_googleplaystore=pd.read_csv("E:/NullClass LiveProject/googleplaystore.csv/googleplaystore.csv")
-data_userreviews=pd.read_csv("E:/NullClass LiveProject/googleplaystore_user_reviews.csv/googleplaystore_user_reviews.csv")
+data_googleplaystore=pd.read_csv("googleplaystore.csv/googleplaystore.csv")
+data_userreviews=pd.read_csv("googleplaystore_user_reviews.csv/googleplaystore_user_reviews.csv")
 
 data_googleplaystore.info()
 data_userreviews.info()
@@ -71,7 +71,7 @@ plt.figure(figsize=(10, 5))
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
 plt.title("Word Cloud for >=4.5 Star Reviews in HEALTH_AND_FITNESS Category", fontsize=16)
-plt.savefig("E:/NullClass LiveProject/Task/wordcloud.png", dpi=100, bbox_inches='tight')
+plt.savefig("Task/wordcloud.png", dpi=100, bbox_inches='tight')
 plt.show()
 plt.close()
 
@@ -112,7 +112,7 @@ def is_within_time_range1():
     current_time = datetime.now().time()
     return current_time >= datetime.strptime("15:00", "%H:%M").time() and current_time <= datetime.strptime("17:00", "%H:%M").time()
 
-html_files_path = "E:/NullClass LiveProject/Task"
+html_files_path = "Task"
 if not os.path.exists(html_files_path):
     os.makedirs(html_files_path)
 
