@@ -361,6 +361,45 @@ dashboard_html = """
             max-width: 600px;
         }}
     </style>
+        <script>
+        function checkTimeAndDisplay() {{
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            
+            var plotContainers = document.querySelectorAll('.plot-container');
+            
+            plotContainers.forEach(function(container) {{
+                var timeWindowMessage = container.querySelector('.message');
+                var plot = container.querySelector('.plot');
+                var insights = container.querySelector('.insights');
+
+                if (hours >= 15 && hours < 17) {{
+                    if (timeWindowMessage) {{
+                        timeWindowMessage.style.display = 'none';
+                    }}
+                    plot.style.display = 'block';
+                    insights.style.display = 'block';
+                }} else if (hours >= 17 && hours < 19) {{
+                    if (timeWindowMessage) {{
+                        timeWindowMessage.style.display = 'none';
+                    }}
+                    plot.style.display = 'block';
+                    insights.style.display = 'block';
+                }} else {{
+                    if (timeWindowMessage) {{
+                        timeWindowMessage.style.display = 'block';
+                    }}
+                    plot.style.display = 'none';
+                    insights.style.display = 'none';
+                }}
+            }});
+        }}
+
+        window.onload = function() {{
+            checkTimeAndDisplay();
+        }};
+    </script>
 </head>
 <body>
     <div class="header">
