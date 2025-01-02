@@ -212,7 +212,7 @@ def is_within_time_range2():
 
 def save_plot_as_html2(fig, filename, insight):
     html_content=pio.to_html(fig, full_html=False, include_plotlyjs='inline')
-    if is_within_time_range2():
+   # if is_within_time_range2():
         global plot_containers
         plot_containers += f"""
         <div class="plot-container">
@@ -224,14 +224,14 @@ def save_plot_as_html2(fig, filename, insight):
             </div>
         </div>
         """
-    else:
-        plot_containers += f"""
-        <div class="plot-container">
-            <div class="message">
-                This chart is only available between 5 PM IST to 7 PM IST.
-            </div>
-        </div>
-        """
+   # else:
+        #plot_containers += f"""
+        #<div class="plot-container">
+           # <div class="message">
+                #This chart is only available between 5 PM IST to 7 PM IST.
+           # </div>
+        3</div>
+       # """
     fig.write_html(filename, full_html=False, include_plotlyjs='inline')
 
 
