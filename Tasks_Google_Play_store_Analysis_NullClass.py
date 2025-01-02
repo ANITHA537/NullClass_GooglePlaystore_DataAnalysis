@@ -65,13 +65,15 @@ filtered_words = [
 
 
 wordcloud=WordCloud(width=400, height=400, background_color='white').generate(" ".join(filtered_words))
-
+html_files_path = "build"
+if not os.path.exists(html_files_path):
+    os.makedirs(html_files_path)
 
 plt.figure(figsize=(10, 5))
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
 plt.title("Word Cloud for >=4.5 Star Reviews in HEALTH_AND_FITNESS Category", fontsize=16)
-plt.savefig("wordcloud.png", dpi=300, bbox_inches='tight')
+plt.savefig("build/wordcloud.png", dpi=300, bbox_inches='tight')
 plt.show()
 plt.close()
 
@@ -112,9 +114,7 @@ def is_within_time_range1():
     current_time = datetime.now().time()
     return current_time >= datetime.strptime("15:00", "%H:%M").time() and current_time <= datetime.strptime("17:00", "%H:%M").time()
 
-html_files_path = "build"
-if not os.path.exists(html_files_path):
-    os.makedirs(html_files_path)
+
 
 plot_containers=""
 wordcloud_filename=os.path.join(html_files_path, "wordcloud.png")
