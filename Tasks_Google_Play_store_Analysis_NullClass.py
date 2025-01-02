@@ -113,7 +113,7 @@ data_googleplaystore['Reviews']=data_googleplaystore['Reviews'].astype(int)
 
 def is_within_time_range1():
     current_time = datetime.now().time()
-    return current_time >= datetime.strptime("2:00", "%H:%M").time() and current_time <= datetime.strptime("2:29", "%H:%M").time()
+    return current_time >= datetime.strptime("2:00", "%H:%M").time() and current_time <= datetime.strptime("2:35", "%H:%M").time()
 
 
 
@@ -374,7 +374,7 @@ dashboard_html = """
                 var plot = container.querySelector('.plot');
                 var insights = container.querySelector('.insights');
 
-                if (hours >= 15 && hours < 17) {{
+                if (hours >= 2 && hours < 3) {{
                     if (timeWindowMessage) {{
                         timeWindowMessage.style.display = 'none';
                     }}
