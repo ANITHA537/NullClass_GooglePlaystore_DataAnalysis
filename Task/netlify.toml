@@ -3,7 +3,7 @@
   command = "pip install -r requirements.txt && python Tasks_Google_Play_store_Analysis_NullClass.py"
 
 [context.production.environment]
-  PYTHON_VERSION = "3.13"
+  PYTHON_VERSION = "3.9"
 
 [[plugins]]
   package = "@netlify/plugin-lifecycle-env"
