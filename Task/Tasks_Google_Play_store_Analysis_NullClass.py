@@ -13,8 +13,8 @@ import plotly.express as px
 import plotly.io as pio
 import webbrowser
 
-data_googleplaystore=pd.read_csv("/googleplaystore.csv/googleplaystore.csv")
-data_userreviews=pd.read_csv("/googleplaystore_user_reviews.csv/googleplaystore_user_reviews.csv")
+data_googleplaystore=pd.read_csv("googleplaystore.csv")
+data_userreviews=pd.read_csv("googleplaystore_user_reviews.csv")
 
 data_googleplaystore.info()
 data_userreviews.info()
