@@ -374,13 +374,13 @@ dashboard_html = """
                 var plot = container.querySelector('.plot');
                 var insights = container.querySelector('.insights');
 
-                if (hours >= 2 && hours < 3) {{
+                if (hours >= 15 && hours < 17) {{
                     if (timeWindowMessage) {{
                         timeWindowMessage.style.display = 'none';
                     }}
                     plot.style.display = 'block';
                     insights.style.display = 'block';
-                }} else if (hours >= 17 && hours < 19) {{
+                }} else if (hours >= 2 && hours < 3) {{
                     if (timeWindowMessage) {{
                         timeWindowMessage.style.display = 'none';
                     }}
