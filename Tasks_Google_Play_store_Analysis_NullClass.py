@@ -120,7 +120,7 @@ plot_containers=""
 #wordcloud_filename=os.path.join(html_files_path, "wordcloud.png")
 plot_containers+=f"""
 <div class="plot-container">
-    <img src="build/wordcloud.png" alt="Word Cloud of Categories" style="width:100%; height:auto;">
+    <img src="/wordcloud.png" alt="Word Cloud of Categories" style="width:100%; height:auto;">
     <div class="insights">
         This word cloud represents the frequent words in the reviews of the apps rated  >=4.5 in HEALTH_AND_FITNESS Category .
     </div>
