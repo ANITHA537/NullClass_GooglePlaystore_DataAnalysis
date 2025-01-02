@@ -132,25 +132,25 @@ plot_containers+=f"""
 def save_plot_as_html1(fig, filename, insight):
     global plot_containers
     html_content=pio.to_html(fig, full_html=False, include_plotlyjs='inline')
-    if is_within_time_range1():
-        plot_containers+=f"""
-        <div class="plot-container">
-            <div class="plot">
-                {html_content} 
-            </div>
-            <div class="insights">
-                {insight} 
-            </div>
+    #if is_within_time_range1():
+    plot_containers+=f"""
+    <div class="plot-container">
+        <div class="plot">
+            {html_content} 
         </div>
-        """
-    else:
-        plot_containers+=f"""
-        <div class="plot-container">
-            <div class="message">
-                This chart is only available between 3 PM IST to 5 PM IST.
-            </div>
+        <div class="insights">
+            {insight} 
         </div>
-        """
+    </div>
+    """
+    #else:
+        #plot_containers+=f"""
+        #<div class="plot-container">
+            #<div class="message">
+               # This chart is only available between 3 PM IST to 5 PM IST.
+           # </div>
+        #</div>
+        #"""
     fig.write_html(filename, full_html=False, include_plotlyjs='inline')
 
 
@@ -206,9 +206,9 @@ save_plot_as_html1(fig,"Top 10 App Categories_Average Rating&Total Reviews.html"
 
 
 
-def is_within_time_range2():
-    current_time=datetime.now().time()
-    return current_time>=datetime.strptime("17:00","%H:%M").time() and current_time<=datetime.strptime("19:00","%H:%M").time()
+#def is_within_time_range2():
+    #current_time=datetime.now().time()
+    #return current_time>=datetime.strptime("17:00","%H:%M").time() and current_time<=datetime.strptime("19:00","%H:%M").time()
 
 def save_plot_as_html2(fig, filename, insight):
     html_content=pio.to_html(fig, full_html=False, include_plotlyjs='inline')
@@ -374,13 +374,13 @@ dashboard_html = """
                 var plot = container.querySelector('.plot');
                 var insights = container.querySelector('.insights');
 
-                if (hours >= 15 && hours < 17) {{
+                if (hours >= 15 && hours <=17) {{
                     if (timeWindowMessage) {{
                         timeWindowMessage.style.display = 'none';
                     }}
                     plot.style.display = 'block';
                     insights.style.display = 'block';
-                }} else if (hours >= 2 && hours < 3) {{
+                }} else if (hours >= 17 && hours <=19) {{
                     if (timeWindowMessage) {{
                         timeWindowMessage.style.display = 'none';
                     }}
