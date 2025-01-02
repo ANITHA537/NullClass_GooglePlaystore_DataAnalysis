@@ -112,12 +112,12 @@ def is_within_time_range1():
     current_time = datetime.now().time()
     return current_time >= datetime.strptime("15:00", "%H:%M").time() and current_time <= datetime.strptime("17:00", "%H:%M").time()
 
-html_files_path = "/"
+html_files_path = "publish"
 if not os.path.exists(html_files_path):
     os.makedirs(html_files_path)
 
 plot_containers=""
-wordcloud_filename=os.path.join(html_files_path, "wordcloud.png")
+wordcloud_filename=os.path.join("/", "wordcloud.png")
 plot_containers+=f"""
 <div class="plot-container">
     <img src="{wordcloud_filename}" alt="Word Cloud of Categories" style="width:100%; height:auto;">
