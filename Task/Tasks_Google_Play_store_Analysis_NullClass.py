@@ -71,7 +71,7 @@ plt.figure(figsize=(10, 5))
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
 plt.title("Word Cloud for >=4.5 Star Reviews in HEALTH_AND_FITNESS Category", fontsize=16)
-plt.savefig("Task/wordcloud.png", dpi=100, bbox_inches='tight')
+plt.savefig("wordcloud.png", dpi=100, bbox_inches='tight')
 plt.show()
 plt.close()
 
