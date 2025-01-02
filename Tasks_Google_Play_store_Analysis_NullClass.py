@@ -117,7 +117,7 @@ if not os.path.exists(html_files_path):
     os.makedirs(html_files_path)
 
 plot_containers=""
-wordcloud_filename=os.path.join("/", "wordcloud.png")
+wordcloud_filename=os.path.join(html_files_path, "wordcloud.png")
 plot_containers+=f"""
 <div class="plot-container">
     <img src="{wordcloud_filename}" alt="Word Cloud of Categories" style="width:100%; height:auto;">
