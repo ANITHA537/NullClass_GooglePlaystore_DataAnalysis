@@ -113,7 +113,7 @@ data_googleplaystore['Reviews']=data_googleplaystore['Reviews'].astype(int)
 
 def is_within_time_range1():
     current_time = datetime.now().time()
-    return current_time >= datetime.strptime("2:00", "%H:%M").time() and current_time <= datetime.strptime("17:00", "%H:%M").time()
+    return current_time >= datetime.strptime("15:00", "%H:%M").time() and current_time <= datetime.strptime("17:00", "%H:%M").time()
 
 
 
