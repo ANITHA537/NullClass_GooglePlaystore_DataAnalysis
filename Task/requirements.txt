@@ -7,9 +7,6 @@ asyncprawcore==2.4.0
 atomicwrites==1.4.0
 ccxt==4.4.32
 chart-studio==1.1.0
-conda-repo-cli==1.0.75
-conda-verify==3.4.2
-et-xmlfile==1.1.0
 feedfinder2==0.0.4
 feedparser==6.0.11
 fonttools==4.25.0
