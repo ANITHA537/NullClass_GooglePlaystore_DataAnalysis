@@ -378,8 +378,6 @@ dashboard_html = """
 final_html= dashboard_html.format(plots=plot_containers, plot_width=650, plot_height=475)
 
 
-
-dashboard_path=os.path.join(html_files_path,"Top 10 App Categories_Average Rating&Total Reviews.html")
 dashboard_path=os.path.join(html_files_path,"index.html")
 
 with open(dashboard_path, "w", encoding="utf-8") as f:
