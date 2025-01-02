@@ -112,7 +112,7 @@ def is_within_time_range1():
     current_time = datetime.now().time()
     return current_time >= datetime.strptime("15:00", "%H:%M").time() and current_time <= datetime.strptime("17:00", "%H:%M").time()
 
-html_files_path = "publish"
+html_files_path = "build"
 if not os.path.exists(html_files_path):
     os.makedirs(html_files_path)
 
