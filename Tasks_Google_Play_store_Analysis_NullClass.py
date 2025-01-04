@@ -396,6 +396,10 @@ dashboard_html = """
                         message.style.display = "none";
                         plot.style.display = "block";
                         insights.style.display = "block";
+                    }}else{{
+                        message.style.display = "block";
+                        plot.style.display = 'none';
+                        insights.style.display = 'none';
                     }} 
                 }}
             }});
