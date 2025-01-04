@@ -391,11 +391,13 @@ dashboard_html = """
                     message.style.display = "none";
                     plot.style.display = "block";
                     insights.style.display = "block";
-                    }} else if (currentHours >= 17 && currentHours < 19 && insights.textContent=="This bubble chart shows the relationship between app size, rating, and the number of installs for games with more than 50k installs and a rating greater than 3.5.Subway Surfers is the most installed app with an average rating of 4.5") {{
+                    console.log(insights)
+                    }} else if (currentHours >= 17 && currentHours < 20 && insights.textContent=="This bubble chart shows the relationship between app size, rating, and the number of installs for games with more than 50k installs and a rating greater than 3.5.Subway Surfers is the most installed app with an average rating of 4.5") {{
                         // Show plot and insights, hide the message
                         message.style.display = "none";
                         plot.style.display = "block";
                         insights.style.display = "block";
+                        console.log(insights)
                     }}else{{
                         message.style.display = "block";
                         plot.style.display = 'none';
