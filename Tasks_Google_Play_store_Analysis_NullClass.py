@@ -386,12 +386,12 @@ dashboard_html = """
                 // Ensure the elements exist
                 if (message && plot && insights) {{
                     // Check the time range and update visibility
-                    if (currentHours >= 12 && currentHours >= 12 && insights=="This grouped bar chart shows the Totalreviews in lakhs and average rating ofTop10 Categorieson installments,With Family as Top 1 Category") {{
+                    if (currentHours >= 15 && currentHours < 17 && insights=="This grouped bar chart shows the Totalreviews in lakhs and average rating ofTop10 Categorieson installments,With Family as Top 1 Category") {{
                     // Show plot and insights, hide the message
                     message.style.display = "none";
                     plot.style.display = "block";
                     insights.style.display = "block";
-                    }} else if (currentHours >= 17 && currentHours < 19) {{
+                    }} else if (currentHours >= 17 && currentHours < 19 && insights=="This bubble chart shows the relationship between app size, rating, and the number of installs for games with more than 50k installs and a rating greater than 3.5.Subway Surfers is the most installed app with an average rating of 4.5") {{
                         // Show plot and insights, hide the message
                         message.style.display = "none";
                         plot.style.display = "block";
