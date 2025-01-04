@@ -360,6 +360,45 @@ dashboard_html = """
             max-width: 600px;
         }}
     </style>
+    <script>
+        // Function to dynamically display graphs or messages based on time
+        function updatePlotsBasedOnTime() {
+            // Get the current time
+            const currentTime = new Date();
+            const currentHours = currentTime.getHours(); // Get the hour (24-hour format)
+
+            // Select all plot containers
+            const plotContainers = document.querySelectorAll(".plot-container");
+
+            // Iterate through each plot container
+            plotContainers.forEach((container) => {
+                // Find the message, plot, and insights elements
+                const message = container.querySelector(".message");
+                const plot = container.querySelector(".plot");
+                const insights = container.querySelector(".insights");
+
+                // Ensure the elements exist
+                if (message && plot && insights) {
+                    // Check the time range and update visibility
+                    if (currentHours >= 15 && currentHours < 17) {
+                    // Show plot and insights, hide the message
+                    message.style.display = "none";
+                    plot.style.display = "block";
+                    insights.style.display = "block";
+                    } else if (currentHours >= 17 && currentHours < 19) {
+                        // Show plot and insights, hide the message
+                        message.style.display = "none";
+                        plot.style.display = "block";
+                        insights.style.display = "block";
+                    } 
+                }
+            });
+        }
+
+        // Run the function when the page loads
+        window.onload = updatePlotsBasedOnTime;
+
+    </script>
       
 </head>
 <body>
