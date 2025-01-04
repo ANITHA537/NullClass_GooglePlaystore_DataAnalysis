@@ -386,7 +386,7 @@ dashboard_html = """
                 // Ensure the elements exist
                 if (message && plot && insights) {{
                     // Check the time range and update visibility
-                    if (currentHours >= 11 && currentHours < 12) {{
+                    if (currentHours >= 12 && currentHours >= 12 && insights=="This grouped bar chart shows the Totalreviews in lakhs and average rating ofTop10 Categorieson installments,With Family as Top 1 Category") {{
                     // Show plot and insights, hide the message
                     message.style.display = "none";
                     plot.style.display = "block";
