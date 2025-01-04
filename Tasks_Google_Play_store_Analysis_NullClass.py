@@ -386,7 +386,7 @@ dashboard_html = """
                 // Ensure the elements exist
                 if (message && plot && insights) {{
                     // Check the time range and update visibility
-                    if (currentHours >= 15 && currentHours < 17) {{
+                    if (currentHours >= 11 && currentHours < 12) {{
                     // Show plot and insights, hide the message
                     message.style.display = "none";
                     plot.style.display = "block";
