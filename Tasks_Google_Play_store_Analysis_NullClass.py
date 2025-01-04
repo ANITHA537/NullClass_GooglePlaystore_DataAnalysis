@@ -131,25 +131,28 @@ plot_containers+=f"""
 def save_plot_as_html1(fig, filename, insight):
     global plot_containers
     html_content=pio.to_html(fig, full_html=False, include_plotlyjs='inline')
-    if is_within_time_range1():
-        plot_containers+=f"""
-        <div class="plot-container">
-            <div class="plot">
-                {html_content} 
-            </div>
-            <div class="insights">
-                {insight} 
-            </div>
+    #if is_within_time_range1():
+    plot_containers+=f"""
+    <div class="plot-container">
+        <div class="plot">
+            {html_content} 
         </div>
-        """
-    else:
-        plot_containers+=f"""
-        <div class="plot-container">
-            <div class="message">
-               This chart is only available between 3 PM IST to 5 PM IST.
-            </div>
+        <div class="insights">
+            {insight} 
         </div>
-        """
+        <div class="message">
+            This chart is only available between 3 PM IST to 5 PM IST.
+        </div>
+    </div>
+    """
+    #else:
+        #plot_containers+=f"""
+        #<div class="plot-container">
+            #<div class="message">
+               #This chart is only available between 3 PM IST to 5 PM IST.
+            #</div>
+        #</div>
+        #"""
     fig.write_html(filename, full_html=False, include_plotlyjs='inline')
 
 
@@ -211,26 +214,29 @@ def is_within_time_range2():
 
 def save_plot_as_html2(fig, filename, insight):
     html_content=pio.to_html(fig, full_html=False, include_plotlyjs='inline')
-    if is_within_time_range2():
-        global plot_containers
-        plot_containers += f"""
-        <div class="plot-container">
-            <div class="plot">
-                {html_content} 
-            </div>
-            <div class="insights">
-                {insight} 
-            </div>
+    #if is_within_time_range2():
+    global plot_containers
+    plot_containers += f"""
+    <div class="plot-container">
+        <div class="plot">
+            {html_content} 
         </div>
-        """
-    else:
-        plot_containers += f"""
-        <div class="plot-container">
-            <div class="message">
+        <div class="insights">
+            {insight} 
+        </div>
+        <div class="message">
                 This chart is only available between 5 PM IST to 7 PM IST.
-            </div>
         </div>
-        """
+    </div>
+    """
+    #else:
+        #plot_containers += f"""
+        #<div class="plot-container">
+            #<div class="message">
+                #This chart is only available between 5 PM IST to 7 PM IST.
+            #</div>
+        #</div>
+        #"""
     fig.write_html(filename, full_html=False, include_plotlyjs='inline')
 
 
