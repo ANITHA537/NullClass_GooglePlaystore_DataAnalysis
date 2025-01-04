@@ -131,28 +131,25 @@ plot_containers+=f"""
 def save_plot_as_html1(fig, filename, insight):
     global plot_containers
     html_content=pio.to_html(fig, full_html=False, include_plotlyjs='inline')
-    #if is_within_time_range1():
-    plot_containers+=f"""
-    <div class="plot-container">
-        <div class="plot">
-            {html_content} 
+    if is_within_time_range1():
+        plot_containers+=f"""
+        <div class="plot-container">
+            <div class="plot">
+                {html_content} 
+            </div>
+            <div class="insights">
+                {insight} 
+            </div>
         </div>
-        <div class="insights">
-            {insight} 
+        """
+    else:
+        plot_containers+=f"""
+        <div class="plot-container">
+            <div class="message">
+               This chart is only available between 3 PM IST to 5 PM IST.
+            </div>
         </div>
-        <div class="message">
-            This chart is only available between 3 PM IST to 5 PM IST.
-        </div>
-    </div>
-    """
-    #else:
-        #plot_containers+=f"""
-        #<div class="plot-container">
-            #<div class="message">
-               #This chart is only available between 3 PM IST to 5 PM IST.
-            #</div>
-        #</div>
-        #"""
+        """
     fig.write_html(filename, full_html=False, include_plotlyjs='inline')
 
 
@@ -214,29 +211,26 @@ def is_within_time_range2():
 
 def save_plot_as_html2(fig, filename, insight):
     html_content=pio.to_html(fig, full_html=False, include_plotlyjs='inline')
-    #if is_within_time_range2():
-    global plot_containers
-    plot_containers += f"""
-    <div class="plot-container">
-        <div class="plot">
-            {html_content} 
+    if is_within_time_range2():
+        global plot_containers
+        plot_containers += f"""
+        <div class="plot-container">
+            <div class="plot">
+                {html_content} 
+            </div>
+            <div class="insights">
+                {insight} 
+            </div>
         </div>
-        <div class="insights">
-            {insight} 
+        """
+    else:
+        plot_containers += f"""
+        <div class="plot-container">
+            <div class="message">
+                This chart is only available between 5 PM IST to 7 PM IST.
+            </div>
         </div>
-        <div class="message">
-            This chart is only available between 5 PM IST to 7 PM IST.
-        </div>
-    </div>
-    """
-    #else:
-    #plot_containers += f"""
-    #<div class="plot-container">
-        #<div class="message">
-            #This chart is only available between 5 PM IST to 7 PM IST.
-        #</div>
-    #</div>
-    #"""
+        """
     fig.write_html(filename, full_html=False, include_plotlyjs='inline')
 
 
@@ -366,41 +360,7 @@ dashboard_html = """
             max-width: 600px;
         }}
     </style>
-       <script>
-           function updatePlotsBasedOnTime() {
-    // Get the current time
-            const currentTime = new Date();
-            const currentHours = currentTime.getHours(); // Get the hour (24-hour format)
-
-    // Select all plot containers
-            const plotContainers = document.querySelectorAll(".plot-container");
-
-    // Iterate through each plot container
-            plotContainers.forEach((container) => {
-        // Find the message, plot, and insights elements
-                const message = container.querySelector(".message");
-                const plot = container.querySelector(".plot");
-                const insights = container.querySelector(".insights");
-
-        // Ensure the elements exist
-                if (message && plot && insights) {
-            // Check the time range and update visibility
-                    if (currentHours >= 15 && currentHours < 17) {
-                //     Show plot and insights, hide the message
-                        message.style.display = "none";
-                        plot.style.display = "block";
-                        insights.style.display = "block";
-                    } else if (currentHours >= 17 && currentHours < 19) {
-                // Show plot and insights, hide the message
-                        message.style.display = "none";
-                        plot.style.display = "block";
-                        insights.style.display = "block";
-                    }
-                }
-            });
-        }
-        window.onload = updatePlotsBasedOnTime;
-    </script>
+      
 </head>
 <body>
     <div class="header">
