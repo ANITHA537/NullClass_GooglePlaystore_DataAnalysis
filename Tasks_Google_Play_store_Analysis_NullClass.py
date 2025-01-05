@@ -178,7 +178,7 @@ print(category_metrics)
 data=category_metrics.reset_index()  
 melted_data = data.melt(id_vars='Category',value_vars=['Average_Rating','Total_Reviews'],var_name='Metric',value_name='Value')
     
-fig=px.bar(
+fig1=px.bar(
         melted_data,
         x='Category',
         y='Value',
@@ -189,7 +189,7 @@ fig=px.bar(
         text='Value'
     )
 
-fig.update_layout(
+fig1.update_layout(
         xaxis_title="App Category",
         yaxis_title="Value",
         legend_title="Metrics",
@@ -201,10 +201,10 @@ fig.update_layout(
         yaxis=dict(title_font={'size':10}),
         margin=dict(l=60,r=60,t=60,b=60)
     )    
-fig.show()
+fig1.show()
 
 
-save_plot_as_html1(fig,"Top 10 App Categories_Average Rating&Total Reviews.html","This grouped bar chart shows the Totalreviews in lakhs and average rating ofTop10 Categorieson installments,With Family as Top 1 Category")
+save_plot_as_html1(fig1,"Top 10 App Categories_Average Rating&Total Reviews.html","This grouped bar chart shows the Totalreviews in lakhs and average rating ofTop10 Categorieson installments,With Family as Top 1 Category")
 
 
 
@@ -367,47 +367,60 @@ dashboard_html = """
         }}
     </style>
     <script>
-        // Function to dynamically display graphs or messages based on time
         function updatePlotsBasedOnTime() {{
-            // Get the current time
+    // Get the current time
             const currentTime = new Date();
             const currentHours = currentTime.getHours(); // Get the hour (24-hour format)
+            //console.log(currentHours)
 
-            // Select all plot containers
+    // Select all plot containers
             const plotContainers = document.querySelectorAll(".plot-container");
 
-            // Iterate through each plot container
-            plotContainers.forEach((container) => {{
-                // Find the message, plot, and insights elements
-                const message = container.querySelector(".message");
-                const plot = container.querySelector(".plot");
-                const insights = container.querySelector(".insights");
+    // Example: Access specific containers by index
+            
+            const firstPlotContainer = plotContainers[1];
+            const secondPlotContainer = plotContainers[3];
+            debugger;
+            
+             console.log(firstPlotContainer, secondPlotContainer);
 
-                // Ensure the elements exist
-                if (message && plot && insights) {{
-                    // Check the time range and update visibility
-                    if (currentHours >= 15 && currentHours < 17 && insights.textContent=="This grouped bar chart shows the Totalreviews in lakhs and average rating ofTop10 Categorieson installments,With Family as Top 1 Category") {{
-                    // Show plot and insights, hide the message
-                    message.style.display = "none";
-                    plot.style.display = "block";
-                    insights.style.display = "block";
-                    console.log(insights)
-                    }} else if (currentHours >= 17 && currentHours < 20 && insights.textContent=="This bubble chart shows the relationship between app size, rating, and the number of installs for games with more than 50k installs and a rating greater than 3.5.Subway Surfers is the most installed app with an average rating of 4.5") {{
-                        // Show plot and insights, hide the message
-                        message.style.display = "none";
-                        plot.style.display = "block";
-                        insights.style.display = "block";
-                        console.log(insights)
-                    }}else{{
-                        message.style.display = "block";
-                        plot.style.display = 'none';
-                        insights.style.display = 'none';
-                    }} 
+        // Handle the first container
+            const firstMessage = firstPlotContainer.querySelector(".message");
+            const firstPlot = firstPlotContainer.querySelector(".plot");
+            const firstInsights = firstPlotContainer.querySelector(".insights");
+            const secondMessage = secondPlotContainer.querySelector(".message");
+            const secondPlot = secondPlotContainer.querySelector(".plot");
+            const secondInsights = secondPlotContainer.querySelector(".insights");
+            
+
+    
+                if (currentHours >= 15 && currentHours < 17) {{
+                    firstMessage.style.display = "none";
+                    firstPlot.style.display = "block";
+                    firstInsights.style.display = "block";
+                    secondMessage.style.display = "block";
+                    secondPlot.style.display = "none";
+                    secondInsights.style.display = "none";
                 }}
-            }});
-        }}
-
-        // Run the function when the page loads
+                else if (currentHours >= 17 && currentHours < 19) {{
+                    secondMessage.style.display = "none";
+                    secondPlot.style.display = "block";
+                    secondInsights.style.display = "block";
+                    firstMessage.style.display = "block";
+                    firstPlot.style.display = "none";
+                    firstInsights.style.display = "none";
+                }}
+                else{{
+                    firstMessage.style.display = "block";
+                    firstPlot.style.display = "none";
+                    firstInsights.style.display = "none";
+                    secondMessage.style.display = "block";
+                    secondPlot.style.display = "none";
+                    secondInsights.style.display = "none";
+                }}
+                
+                
+            }}
         window.onload = updatePlotsBasedOnTime;
 
     </script>
