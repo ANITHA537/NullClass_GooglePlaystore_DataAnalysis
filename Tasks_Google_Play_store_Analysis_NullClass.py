@@ -376,15 +376,22 @@ dashboard_html = """
             const secondPlotContainer = plotContainers[3];
 
             const firstMessage = firstPlotContainer.querySelector(".message");
-            
+            const firstPlot = firstPlotContainer.querySelector(".plot");
+            const firstInsights = firstPlotContainer.querySelector(".insights");
             const secondMessage = secondPlotContainer.querySelector(".message");
+            const secondPlot = secondPlotContainer.querySelector(".plot");
+            const secondInsights = secondPlotContainer.querySelector(".insights");
            
 
             if (currentHours < 15 || currentHours > 17) {{
                 firstMessage.style.display = "block";
+                firstPlot.style.display="none";
+                firstInsights.style.display="none";
             }}
             if (currentHours < 17 || currentHours > 19) {{
                 secondMessage.style.display = "block";
+                secondPlot.style.display="none";
+                secondInsights.style.display="none";
                
             }}
         }}
